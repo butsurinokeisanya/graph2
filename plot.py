@@ -143,7 +143,9 @@ ax2.errorbar(x2,[OFFSET1]*len(x2),fmt="none", color="g", yerr=LEN_BAR, label="Ex
 
 # タイトル
 plt.title("Fluorapatite, Ca$_5$(PO$_4$)$_3$", y=1.05)
-ax.legend(frameon=False) #フレームなし
+ax.legend(loc='upper right', frameon=False)  # フレームなし、右上に配置
+ax2.legend(loc='upper left', frameon=False)  # フレームなし、左上に配置
+
 ax.set_ylabel("Intensity [arb.units]", labelpad=SYLBL)
 ax2.set_ylabel("Intensity [arb.units]", labelpad=SYLBL*3,rotation=270)
 plt.xlabel("2$\u03b8$"+"[$\mathregular{\degree}$]", labelpad=SYLBL)
