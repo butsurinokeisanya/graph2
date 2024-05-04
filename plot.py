@@ -130,28 +130,26 @@ ax2.set_yticks(np.arange(Y2TMIN, Y2TMAX+1, step=Y2INC))
 #--------------------------------------------------------------
 # color
 # b, g, r, c, m, y, k
-
+#--------------------------------------------------------------
+# y1軸
 ax.plot(x, y1,         "+", color="r",  markersize=PSIZE, label=header[1])
 ax.plot(x, y2,         "-", color="c",  linewidth=DLW,    label=header[2], zorder=-1)
-
-
-
+#--------------------------------------------------------------
+# y2軸
 ax2.plot(x, y3+OFFSETD, "-", color="b",  linewidth=DLW,    label=header[3])
 ax2.plot(x, y4,         "-", color="k",  linewidth=DLW,    label=header[4])
 ax2.errorbar(x2,[OFFSET1]*len(x2),fmt="none", color="g", yerr=LEN_BAR, label="Expected Reflection")
-
-
+#--------------------------------------------------------------
 # タイトル
 plt.title("Fluorapatite, Ca$_5$(PO$_4$)$_3$", y=1.05)
 ax.legend(loc='upper right', frameon=False)  # フレームなし、右上に配置
 ax2.legend(loc='upper left', frameon=False)  # フレームなし、左上に配置
-
+ax.set_xlabel("2$\u03b8$"+"[$\mathregular{\degree}$]", labelpad=SYLBL)
 ax.set_ylabel("Intensity [arb.units]", labelpad=SYLBL)
 ax2.set_ylabel("Intensity [arb.units]", labelpad=SYLBL*3,rotation=270)
-plt.xlabel("2$\u03b8$"+"[$\mathregular{\degree}$]", labelpad=SYLBL)
+
 
 #plt.gca().yaxis.set_major_formatter(plt.FormatStrFormatter('%.3f')) # y軸小数点3桁表示
-
 #plt.gca().xaxis.get_major_formatter().set_useOffset(False) #  軸　の数字にオフセット (+1.05e9 など)を使わずに表現する.
 
 #--------------------------------------------------------------
